@@ -80,13 +80,23 @@ with open(input_filename, 'r') as input_file, open(output_filename, 'w') as outp
         if temp[0] == "/":
             temp = temp[1:]
         if temp[-1] == "/":
-            temp = [:len(temp)-1]
+            temp = temp[:len(temp)-1]
         _paths_item = temp.split("/")
         _paths.append(_paths_item)
         _paths_i+=1
         
 
     res = patternMatchPaths(_patterns,_paths);
+    ans = []
+    for res_cur in res:
+        temp = ""
+        if len(res_cur)>1:
+            for i in xrange(len(res_cur)-1):
+                temp += res_cur[i] + ","
+            temp += res_cur[-1]
+        else:
+            temp = res_cur
+        ans.append(temp)
     for res_cur in res:
         output_file.write( str(res_cur) + "\n" )
 
