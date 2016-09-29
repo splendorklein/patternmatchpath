@@ -97,40 +97,6 @@ with open(input_filename, 'r') as input_file, open(output_filename, 'w') as outp
         else:
             temp = res_cur
         ans.append(temp)
-    for res_cur in res:
+    for res_cur in ans:
         output_file.write( str(res_cur) + "\n" )
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-a = [['*','b','*'],
-['a','*','*'], 
-['*','*','c'], 
-['foo','bar','baz'],
-['w','x','*','*'], 
-['*','x','y','z'] 
-]
-b = [['w','x','y','z'] ,
-['a','b','c'] ,
-['foo'] ,
-['foo','bar'] ,
-['foo','bar','baz'] ]
-
-print patternMatchPaths(a,b)
